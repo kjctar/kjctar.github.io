@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>一个你撩不动的妹纸</title>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
+
+<!-- 引入CSS文件 -->
+<link rel="stylesheet" style="text/css" href="./css/style.css"/>
+
+<!-- 音乐JS --><!--
+<script type="text/javascript">
+	// 音乐播放
+	function autoPlayMusic() {
+		// 自动播放音乐效果，解决浏览器或者APP自动播放问题
+		function musicInBrowserHandler() {
+			musicPlay(true);
+			document.body.removeEventListener('touchstart', musicInBrowserHandler);
+		}
+		document.body.addEventListener('touchstart', musicInBrowserHandler);
+
+		// 自动播放音乐效果，解决微信自动播放问题
+		function musicInWeixinHandler() {
+			musicPlay(true);
+			document.addEventListener("WeixinJSBridgeReady", function () {
+				musicPlay(true);
+			}, false);
+			document.removeEventListener('DOMContentLoaded', musicInWeixinHandler);
+		}
+		document.addEventListener('DOMContentLoaded', musicInWeixinHandler);
+	}
+	function musicPlay(isPlay) {
+		var audio = document.getElementById('my_audio');
+		if (isPlay && audio.paused) {
+			audio.play();
+		}
+		if (!isPlay && !audio.paused) {
+			audio.pause();
+		}
+	}
+	autoPlayMusic();
+</script>-->
+
+</head>
+<body>
+	
+	<div id="wrapper">
+		<!-- 加载页 -->
+		<div id="first_layer" class="" style="background:url('img/first_layer.jpg') no-repeat center center;background-size:cover;">
+		
+			<div class="first_layer_btn"><img src="./img/00.png" style="width:100%;height:100%;background:url('img/start.png') no-repeat center center;background-size:contain;"/></div>
+		</div>
+		<!-- 聊天消息 -->
+		<div id="chat_box">
+			<div class="chat_box">
+			<ul>
+				<li><p class="chat_time">12:45</p></li>
+				<li><img src="img/000_l.png"/></li>
+				<li class="to_origin"><p class="chat_time">12:51</p></li>
+				<li class="to_up1" style="display:none;"><a name="Bot"><img src="img/001_r.png"/></a></li>
+				<li class="to_up2" style="display:none;"><img src="img/002_l.png"/></li>
+				<li class="to_up3" style="display:none;"><img src="img/003_r.png"/></li>
+			</ul>
+			</div>
+		</div>
+		
+		<!-- 聊天框 -->
+		<div id="message_box">
+			<img class="message_line" src="img/2line.png"/>
+			<div class="message_text">
+			<ul class="list_a">
+				<li class="select_list select_a"><a href="#Bot"><p>hi</p></a></li>
+				<li class="select_list select_b"><a><p>Game over</p></a></li>
+				<li><p>选择</p></li>
+				<li><p>选择</p></li>
+			</ul>
+			<ul class="list_b" style="display:none;">
+				<li class="select_list select_a"><a href="#Bot"><p>你说什么？</p></a></li>
+				<li class="select_list select_b"><a><p>Game over</p></a></li>
+				<li><p>选择</p></li>
+				<li><p>选择</p></li>
+			</ul>
+			</div>
+		</div>
+		
+	</div>
+
+<!-- 引入JS文件 -->
+<script type="text/javascript" src="./js/jquery.js"></script>
+<script>
+
+$(".first_layer_btn").click(function(){
+	$("#first_layer").removeClass("to_fadeOut");
+	$("#first_layer").addClass("to_fadeIn");
+});
+
+$(".select_a").click(function(){
+	$(".list_a").css("display","none");
+	$(".list_b").fadeIn("1000");
+	
+	$(".to_origin").fadeIn("100");
+	$(".to_up1").fadeIn("100");
+	$(".to_up2").fadeIn("600");
+	$(".to_up3").fadeIn("1100");
+});
+$(".select_b").click(function(){
+	$("#first_layer").removeClass("to_fadeIn");
+	$("#first_layer").addClass("to_fadeOut");
+});
+</script>
+
+</body>
+</html>

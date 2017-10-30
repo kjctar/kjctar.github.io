@@ -1,0 +1,320 @@
+ul{ list-style: none;}
+p{ margin: 0; padding: 0;}
+
+/*  开启GPU加速  */
+.cube
+{
+   -webkit-transform: translateZ(0);
+   -moz-transform: translateZ(0);
+   -ms-transform: translateZ(0);
+   -o-transform: translateZ(0);
+   transform: translateZ(0);
+}
+html, body{
+	position: relative;
+    width: 100%;
+	height: 100%;
+    margin: 0;
+    padding: 0;
+	background: #000;
+}
+body{
+	font-family: Helvetica Neue, Helvetica, Arial, sans-serif, 楷体, 新宋体;
+	-webkit-overflow-scrolling: touch;
+	/* Center slide text vertically */
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	-moz-justify-content: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+	overflow: hidden;
+}
+.to_fadeIn{
+	-webkit-animation: t_fad 1.5s ease;
+	animation: t_fad 1.5s ease;
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+}
+	@-webkit-keyframes t_fad
+	{
+		0%{ opacity: 1;}
+		100%{ opacity: 0; z-index: -99;}
+	}
+	@keyframes t_fad
+	{
+		0%{ opacity: 1;}
+		100%{ opacity: 0; z-index: -99;}
+	}
+.to_fadeOut{
+	-webkit-animation: t_fadOut 6s ease;
+	animation: t_fadOut 6s ease;
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+}
+	@-webkit-keyframes t_fadOut
+	{
+		0%{ opacity: 0;}
+		80%{ opacity: 0;}
+		100%{ opacity: 1; z-index: 9999;}
+	}
+	@keyframes t_fadOut
+	{
+		0%{ opacity: 0;}
+		80%{ opacity: 0;}
+		100%{ opacity: 1; z-index: 9999;}
+	}
+
+#first_layer{
+	position: fixed;
+	width: 100%;
+	max-width: 450px;
+	height: 100%;
+	max-height: 800px;
+	z-index: 9999;
+	background: #ff8420;
+}
+	.first_layer_btn{
+		position: relative;
+		width: 120px;
+		height: 40px;
+		top: 80%;
+		margin: 0 auto;
+	
+	}
+	.first_layer_btn{
+		color: #fff;
+		line-height: 40px;
+		text-align: center;
+		border-radius: 5px;
+		background: rgba(0,0,0,0.3);
+	}
+	
+
+#wrapper{
+	position: relative;
+	width: 100%;
+	max-width: 450px;
+	height: 100%;
+	max-height: 800px;
+	background: #ebebeb;
+	overflow: hidden;
+}
+
+
+/*  聊天消息  */
+#chat_box{
+	position: relative;
+	width: 100%;
+	height: 65%;
+	margin: 0 auto;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+	.chat_box{
+		position: relative;
+		width: 100%;
+		height: 100%;
+	}
+	.chat_box ul{
+		position: relative;
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		padding: 0;
+	}
+	.chat_box ul li{
+		position: relative;
+		width: 100%;
+		height: auto;
+		margin: 12px 0;
+	}
+	.chat_box ul li:first-child{
+		margin-top: 50px;
+	}
+	.chat_box ul li img{
+		width: 100%;
+		height: 100%;
+	}
+
+.chat_time{
+    position: relative;
+    width: 50px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 24px;
+    font-weight: 100;
+    font-size: 13px;
+    border-radius: 7px;
+    color: #fff;
+    background: rgba(0,0,0,0.1);
+}
+
+
+/*  聊天框  */
+#message_box{
+    position: absolute;
+    width: 100%;
+    height: 35%;
+    left: 0;
+    bottom: 0;
+	z-index: 99;
+	background: #d1d4d9;
+}
+.message_line{
+	position: relative;
+	width: 100%;
+	height: auto;
+	left: 0;
+	top: 0;
+	float: left;
+	z-index: 9999;
+}
+.message_text{
+	position: relative;
+	width: 80%;
+	height: 80%;
+	margin: 0 auto;
+	overflow: hidden;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+	.message_text ul{
+		position: relative;
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		padding: 0;
+	}
+	.message_text ul li{
+		position: relative;
+		width: 100%;
+		height: auto;
+		margin: 10px 0;
+	}
+	.message_text ul li p{
+		position: relative;
+		width: 100%;
+		margin: 0 auto;
+		padding: 5px 0;
+		text-align: center;
+		line-height: 30px;
+		font-weight: 100;
+		font-size: 14px;
+		color: rgba(0,0,0,0.6);
+		background: rgba(0,0,0,0.05);
+		border-radius: 2px;
+	}
+.select_list a{
+	text-decoration: none;
+}
+
+
+/*  LOGO  */
+.a4_logo{
+	position: fixed;
+	width: 6rem;
+	top: 0.8rem;
+	left: 1rem;
+	z-index: 1000;
+	display: block;
+}
+
+/*  模仿消息框  */
+.to_origin, .to_up1, .to_up2, .to_up3{
+	position: absolute;
+	display: none;
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+}
+.to_up1
+{
+	-webkit-animation: t_up1 1s ease;
+	animation: t_up1 1s ease;
+}
+	@-webkit-keyframes t_up1
+	{
+		0%{ -webkit-transform: translateY(20%); opacity: 0;}
+		100%{ -webkit-transform: translateY(0%); opacity: 1;}
+	}
+	@keyframes t_up1
+	{
+		0%{ transform: translateY(20%); opacity: 0;}
+		100%{ transform: translateY(0%); opacity: 1;}
+	}
+
+.to_up2
+{
+	-webkit-animation: t_up2 5s ease;
+	animation: t_up2 5s ease;
+}
+	@-webkit-keyframes t_up2
+	{
+		0%{ -webkit-transform: translateY(20%); opacity: 0;}
+		80%{ -webkit-transform: translateY(20%); opacity: 0;}
+		100%{ -webkit-transform: translateY(0%); opacity: 1;}
+	}
+	@keyframes t_up2
+	{
+		0%{ transform: translateY(20%); opacity: 0;}
+		80%{ transform: translateY(20%); opacity: 0;}
+		100%{ transform: translateY(0%); opacity: 1;}
+	}
+
+.to_up3
+{
+	-webkit-animation: t_up3 8s ease;
+	animation: t_up3 8s ease;
+}
+	@-webkit-keyframes t_up3
+	{
+		0%{ -webkit-transform: translateY(20%); opacity: 0;}
+		85%{ -webkit-transform: translateY(20%); opacity: 0;}
+		100%{ -webkit-transform: translateY(0%); opacity: 1;}
+	}
+	@keyframes t_up3
+	{
+		0%{ transform: translateY(20%); opacity: 0;}
+		85%{ transform: translateY(20%); opacity: 0;}
+		100%{ transform: translateY(0%); opacity: 1;}
+	}
+
+
+
+
+
+
+
+
+/*  设备兼容（REM）  */
+@media only screen and (min-width: 320px) and (max-width: 374px)
+{
+	html{ font-size: 14px;}
+
+}
+@media only screen and (min-width: 375px) and (max-width: 413px)
+{
+	html{ font-size: 16px;}
+
+}
+@media only screen and (min-width: 414px)
+{
+	html{ font-size: 18px;}
+
+}
+
+/*  提示用户竖屏浏览页面  */
+@media all and (orientation : landscape ) and (max-height:751px){ 
+html,body{position:relative;overflow:hidden;width:100%;height:100%;padding:0;margin:0;}
+html::before{content:"";position:fixed;top:0;left:0;height:100%;width:100%;background:#000;z-index:99999;}
+html::after {content:"你要是不把手机竖起来，我就黑给你看。";text-align:center;font-size:16px;color:#fff;position:absolute;top:50%;left:0;height:30px;width:100%;z-index:99999;}
+body::before{content:"";position:absolute;z-index:99999;height:200px;width:100px;left:50%;top:50%;margin:-140px 0 0 -50px;color:#fff;}
+}
